@@ -1,9 +1,10 @@
 function setup() {
-    createCanvas(400, 400, WEBGL);
+    createCanvas(windowWidth, windowHeight, WEBGL);
     angleMode(DEGREES)
+
+    setWindowScale()
 }
 function draw() {
-    orbitControl();
     background(30);
     rotateX(frameCount *0.6)
     rotateY(frameCount*0.2)
@@ -11,7 +12,6 @@ function draw() {
     noFill()
 
     for (let i = 0; i < 40; i++) {
-        
         // let value = (100 + i * 10)
         // stroke(255, value, 255)
 
@@ -34,6 +34,45 @@ function draw() {
             
         }
         endShape(CLOSE)
-    
-        }
+        scale(scaleFactor)
+    }
+
+
+
+    if(frameCount === 1){
+        noLoop()
+    }
 }
+
+let scaleFactor = 1;
+function setWindowScale(){
+    if(windowWidth > 799){
+        scaleFactor = 1.02
+    } else {
+        scaleFactor =1
+    }
+}
+
+function windowResized(){
+    setWindowScale()
+    resizeCanvas(windowWidth, windowHeight)
+}
+
+
+let lastFrameCount = 0;
+let framePause = false;
+function mousePressed(){
+     //when mouse pressed pause sketch
+    if(lastFrameCount + 200 < new Date().getTime()){
+        if (framePause){
+            noLoop();
+            framePause = false;
+        } else {
+            loop()
+            framePause = true;
+        }
+    } 
+    lastFrameCount = new Date().getTime();
+}
+
+
