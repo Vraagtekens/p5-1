@@ -1,9 +1,82 @@
 html, body {
     margin: 0;
     padding: 0;
-    overflow: hidden;
-}
-canvas {
-    display: block;
+    height: 100%;
+    /* overflow: hidden; */
+    font-family: cabin, sans-serif;
 }
 
+.content-container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+}
+
+/* sketch box */
+.main-frame-box{
+    background-color: whitesmoke;
+}
+
+#frame, .code{
+    width: 600px;
+    height: 600px;
+}
+
+@media only screen and (max-width: 599px){
+    #frame, .code{
+        width: 400px;
+        height: 400px;
+    } 
+}
+
+@media only screen and (max-width: 399px){
+    #frame, .code{
+        width: 300px;
+        height: 300px;
+    } 
+}
+
+/* sketch */
+#frame canvas{
+    border-radius: 1px;
+}
+
+.title, .bio{
+    margin: 5px;
+}
+
+.frame-title{
+    font-size: 40px;
+    margin: 10px;
+}
+
+
+.frame-footer{
+    display: flex;
+    justify-content: space-between;
+    padding: 5px;
+}
+
+/* code box */
+.main-code-box{
+    margin-top: 10px;
+    background-color: whitesmoke;
+}
+
+.code-buttons{
+    padding: 5px;
+    text-align: center;
+}
+
+.code-title{
+    background-color:cadetblue;
+}
+
+#code-content{
+    height: 600px;
+}
+
+.code pre{
+    margin-top: 0;
+}

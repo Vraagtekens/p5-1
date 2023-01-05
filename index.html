@@ -6,13 +6,47 @@
     <meta name="viewport" 
       content="width=device-width, initial-scale=1.0">
 
-   <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.4.0/p5.js"></script>
-    <script src="./sketch.js" ></script>
+      <!-- vendors -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Cabin">
+    <script src= "https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.4.0/p5.js"></script>
+    <!-- highlight.js -->
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/11.7.0/styles/a11y-dark.min.css">
+    <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/11.7.0/highlight.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/highlightjs-line-numbers.js/2.8.0/highlightjs-line-numbers.min.js"></script>
+
+    <!-- js -->
+    <script src="./default.js" type="module"></script>
+
+
+    <script src="./sketches/sketch.js" ></script>
 </head>
 <body>
-    <!-- <div id="sketch1"></div>
-    <div id="sketch2"></div> -->
+    <div id="iframePlace"></div>
 
-
+    <div class="content-container">
+      <div>
+  
+        <div class="main-frame-box">
+          <div id="frame-box" class="frame-box">
+            <div class="frame-title"></div>
+            <div id="frame"></div>
+  
+            <div class="frame-footer">
+                <div>
+                  <label>version: </label>
+                  <select id="version">
+                    <option id="first-option" class="version-option" value=""></option>
+                    <template id="version-option">
+                      <option class="version-option" value="sketch-1">sketch-1</option>
+                    </template>
+                  </select>
+                </div>
+              <button id="play-button">pause</button>
+              <button id="fullscreenButton">fullscreen</button>
+            </div>
+          </div>
+        </div>
+    
 </body>
 </html>

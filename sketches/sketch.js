@@ -1,9 +1,25 @@
 function setup() {
-    createCanvas(windowWidth, windowHeight, WEBGL);
-    angleMode(DEGREES)
+    const frame = document.querySelector("#frame");
+    let canvas = createCanvas(frame.offsetWidth, frame.offsetHeight, WEBGL);
+    canvas.parent('frame');
 
+    angleMode(DEGREES)
     setWindowScale()
 }
+
+function windowResized(){
+    points = []
+    if(window.location !== window.parent.location){
+        resizeCanvas(windowWidth, windowHeight)
+    } else {
+        resizeCanvas(frame.offsetWidth, frame.offsetHeight)
+    }
+
+    background(30);
+
+    loop()
+}
+
 function draw() {
     background(30);
     rotateX(frameCount *0.6)
