@@ -8,7 +8,6 @@ function setup() {
 }
 
 function windowResized(){
-    points = []
     if(window.location !== window.parent.location){
         resizeCanvas(windowWidth, windowHeight)
     } else {
@@ -53,8 +52,6 @@ function draw() {
         scale(scaleFactor)
     }
 
-
-
     if(frameCount === 1){
         noLoop()
     }
@@ -69,26 +66,5 @@ function setWindowScale(){
     }
 }
 
-function windowResized(){
-    setWindowScale()
-    resizeCanvas(windowWidth, windowHeight)
-}
-
-
-let lastFrameCount = 0;
-let framePause = false;
-function mousePressed(){
-     //when mouse pressed pause sketch
-    if(lastFrameCount + 200 < new Date().getTime()){
-        if (framePause){
-            noLoop();
-            framePause = false;
-        } else {
-            loop()
-            framePause = true;
-        }
-    } 
-    lastFrameCount = new Date().getTime();
-}
 
 
